@@ -35,7 +35,7 @@
 - (BOOL)photoBrowser:(MWPhotoBrowser *)photoBrowser isPhotoSelectedAtIndex:(NSUInteger)index;
 - (void)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index selectedChanged:(BOOL)selected;
 - (void)photoBrowserDidFinishModalPresentation:(MWPhotoBrowser *)photoBrowser;
-- (BOOL)photoBrowser:(MWPhotoBrowser *)photoBrowser longPressAtIndex:(NSUInteger)index;
+- (void)photoBrowser:(MWPhotoBrowser *)photoBrowser longPressAtIndex:(NSUInteger)index;
 
 @end
 
@@ -53,7 +53,7 @@
 @property (nonatomic) BOOL autoPlayOnAppear;
 @property (nonatomic) NSUInteger delayToHideElements;
 @property (nonatomic, readonly) NSUInteger currentIndex;
-// Add by Tyler
+// default true
 @property (nonatomic, assign) BOOL scrollEnabled;
 
 // Customise image selection icons as they are the only icons with a colour tint
