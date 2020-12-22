@@ -1232,6 +1232,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (BOOL)photoBrowser:(MWPhotoBrowser *)photoBrowser longPressAtIndex:(NSUInteger)index
+{
+    NSLog(@"index: %d", (int)index);
+}
+
 #pragma mark - Load Assets
 
 - (void)loadAssets {

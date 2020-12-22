@@ -89,6 +89,18 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
                                                  name:MWPHOTO_LOADING_DID_END_NOTIFICATION
                                                object:nil];
     
+    UILongPressGestureRecognizer *lp = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+    lp.minimumPressDuration = 1.0;
+    [self.view addGestureRecognizer:lp];
+}
+
+- (void)longPress:(UILongPressGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        if ([self.delegate respondsToSelector:@selector(photoBrowser:longPressAtIndex:)]) {
+            [self.delegate photoBrowser:self longPressAtIndex:_currentPageIndex];
+        }
+    }
 }
 
 - (void)dealloc {
